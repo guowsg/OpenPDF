@@ -287,6 +287,9 @@ class TrueTypeFont extends BaseFont {
                 .endsWith(".ttc")) {
             process(ttfAfm, forceRead);
             if (!justNames && embedded && os_2.fsType == 2) {
+                //修改说明：2025年6月修改： 防止加载字体异常
+                //原作者：OpenPdf
+                //本文件基于LGPL V2.1许可分发
                 // throw new DocumentException(
                 //         MessageLocalization.getComposedMessage("1.cannot.be.embedded.due.to.licensing.restrictions",
                 //                 fileName + style));
